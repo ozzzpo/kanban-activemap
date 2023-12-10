@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, createContext, useContext } from "react";
 import { useForm } from "react-hook-form";
-import service from "../../api/auth.service";
+import authService from "../../api/auth.service";
 import "./Authorization.css";
+import logo from "../../assets/images/activemap.png";
+import { useAuth } from "../../router/AuthWrapper";
+import { useNavigate } from "react-router-dom";
 
 export default function Authorization() {
   const {
@@ -9,22 +12,26 @@ export default function Authorization() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  const [isCorrect, setIsCorrect] = useState(null);
-
+  const auth = useAuth();
+  const navigate = useNavigate();
   const onSubmit = ({ login, password }) => {
-    service
-      .sendLogPass(login, password)
-      .then((data) =>
-        data.res == 0 ? setIsCorrect(false) : setIsCorrect(true)
-      );
+    authService.sendLogPass(login, password).then((data) => {
+      if (data.res === 1) {
+        auth.login(data);
+        navigate("/dashboard");
+      } else {
+        console.log("wrong");
+      }
+    });
   };
-
-  useEffect(() => {}, []);
 
   return (
     <div className='wrapper'>
       <div className='content'>
+        <div className='logo'>
+          <img src={logo} alt='#' className='logo' />
+          <span>ActiveMap</span>
+        </div>
         <div className='login'>
           <p className='title'>Вход</p>
           <form onSubmit={handleSubmit(onSubmit)}>

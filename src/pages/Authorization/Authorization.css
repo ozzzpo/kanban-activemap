@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap");
 .wrapper {
   padding: 25px;
   background-color: #2e2e2e;
@@ -14,9 +15,25 @@
   background-color: #f7f7fa;
   border-radius: 50px;
   display: flex;
-  justify-content: center;
-  align-items: start;
-  padding-top: 50px;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 10px 60px;
+  gap: 10px;
+}
+
+.logo {
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  width: 150px;
+  align-self: flex-start;
+  font-size: 20px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.logo img {
+  width: 50px;
 }
 
 .login {
@@ -28,9 +45,10 @@
   height: fit-content;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   background-color: #fff;
+  border-radius: 5px;
 }
 .title {
-  font-size: 32px;
+  font-size: 30px;
   font-family: "Unbounded";
   text-align: center;
 }
@@ -65,7 +83,7 @@ form {
 }
 
 form label {
-  font-family: "ActayRegular";
+  font-family: "Nunito Sans", sans-serif;
   font-size: 24px;
   color: #565759;
   display: block;
@@ -73,9 +91,11 @@ form label {
 
 form input {
   font-size: 20px;
-  font-family: "ActayRegular";
+  width: 300px;
+  font-family: "Nunito Sans", sans-serif;
   padding: 5px;
   border: 1px solid #0091d6;
+  border-radius: 4px;
 }
 
 form input:focus {
@@ -85,7 +105,7 @@ form input:focus {
 
 form button {
   cursor: pointer;
-  font-size: 32px;
+  font-size: 30px;
   font-family: "Unbounded";
   background-color: #16c098;
   color: #fff;
@@ -94,19 +114,20 @@ form button {
   border-radius: 5px;
 }
 
-form span {
-  font-family: "ActayRegular";
-  text-align: right;
-  color: red;
-  font-size: 14px;
+form button:active {
+  box-shadow: inset 5px 5px 4px rgba(0, 0, 0, 0.25);
+}
+form button:hover {
+  background-color: #1dd3a9;
 }
 
-@font-face {
-  font-family: "ActayRegular";
-  src: url("../../assets/fonts/Actay-Regular.otf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
+form span {
+  font-family: "Nunito Sans", sans-serif;
+  text-align: right;
+  color: red;
+  font-size: 16px;
 }
+
 @font-face {
   font-family: "Unbounded";
   src: url("../../assets/fonts/Unbounded-Regular.ttf") format("truetype");

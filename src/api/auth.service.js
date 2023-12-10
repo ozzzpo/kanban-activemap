@@ -1,6 +1,6 @@
 import axios from "axios";
 const API_BASE_URL = "https://team1.activemap.ru/rest";
-const service = {
+const authService = {
   sendLogPass: async (login, password) => {
     const requestBody = {
       login: login,
@@ -17,4 +17,4 @@ const service = {
     }
   },
 };
-export default service;
+export default authService;
