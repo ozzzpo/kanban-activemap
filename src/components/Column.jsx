@@ -2,16 +2,29 @@ import React, { useEffect, useState } from "react";
 import Task from "./Task";
 import tasksService from "../api/tasks.service";
 
-export default function Column({ status, token }) {
+export default function Column({ status, token, filters }) {
   const [tasks, setTasks] = useState([]);
   useEffect(() => {
     tasksService.getTasks(token).then((data) => {
-      const filteredTasks = data
+      const columnTasks = data
         ? data.news_list.filter((task) => task.status_id === status.id)
         : [];
-      setTasks(filteredTasks);
+      setTasks(columnTasks);
+
+      if (filters.type || filters.assigned) {
+        tasksService
+          .getFilteredTasks(token, filters.assigned, filters.type)
+          .then((data) => {
+            const filteredTasks = data.news_list
+              ? data.news_list.filter((task) => task.status_id === status.id)
+              : [];
+            setTasks(filteredTasks);
+            console.log(filteredTasks);
+          });
+      }
     });
-  }, [status.id, token]);
+  }, [status.id, token, filters.type, filters.assigned]);
+
   const isNew = status.id === "1";
   return (
     <div className='column'>
