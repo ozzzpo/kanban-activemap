@@ -8,6 +8,7 @@ export default function Modal({task, active, isActive, color, token}){
                 <div className='modal_inform'>
                     <div className='modal_header'>
                         <p>{task.title}</p>
+                        <p className='modal_close' onClick={() => isActive(!active)}>X</p>
                     </div>
                     <div className='modal_description'>
                         {task.deadline ? 
