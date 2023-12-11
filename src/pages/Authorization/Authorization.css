@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap");
 .wrapper {
   padding: 25px;
   background-color: #2e2e2e;
@@ -50,7 +51,8 @@
 }
 .title {
   font-size: 30px;
-  font-family: "Unbounded";
+  font-family: "PT Sans Caption", sans-serif;
+  font-weight: 700;
   text-align: center;
 }
 
@@ -107,7 +109,8 @@ form input:focus {
 form button {
   cursor: pointer;
   font-size: 30px;
-  font-family: "Unbounded";
+  font-family: "PT Sans Caption", sans-serif;
+  font-weight: 700;
   background-color: #16c098;
   color: #fff;
   border: none;
@@ -127,11 +130,4 @@ form span {
   text-align: right;
   color: red;
   font-size: 16px;
-}
-
-@font-face {
-  font-family: "Unbounded";
-  src: url("../../assets/fonts/Unbounded-Regular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
 }

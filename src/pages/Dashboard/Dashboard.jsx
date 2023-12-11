@@ -4,11 +4,9 @@ import logo from "../../assets/images/activemap.png";
 import Header from "../../components/Header";
 import Column from "../../components/Column";
 import "./Dashboard.css";
-import authService from "../../api/auth.service";
 import tasksService from "../../api/tasks.service";
 import defaultPic from "../../assets/images/defaultpic.jpg";
 import Sidebar from "../../components/Sidebar";
-import Modal from "../../components/Modal";
 
 export default function Dashboard() {
   const [userPic, setUserPic] = useState(defaultPic);
@@ -16,9 +14,7 @@ export default function Dashboard() {
   const auth = useAuth();
   const user = auth.user;
   const token = user.token;
-  // const tasks = tasksService.getTasks(token).then((data) => {
-  //   console.log("Response data:", data);
-  // });
+  //console.log(user);
 
   useEffect(() => {
     if (user.avatar_update_date) {
@@ -29,10 +25,10 @@ export default function Dashboard() {
     tasksService.getStatuses(token).then((data) => {
       if (data.res === 1) {
         setStatuses(data.status);
-        console.log(data.status);
+        //console.log(data.status);
       }
     });
-  }, []);
+  }, [token, user.avatar_update_date, user.id]);
 
   return (
     <div className='wrapper'>
@@ -41,7 +37,12 @@ export default function Dashboard() {
           <img src={logo} alt='#' className='logo' />
           <span>ActiveMap</span>
         </div>
-        <Header name={user.fio} pic={userPic} />
+        <Header
+          name={user.fio}
+          pic={userPic}
+          token={token}
+          roleId={user.role_id}
+        />
         <main className='main'>
           <Sidebar />
           <div className='columns-scroll'>

@@ -1,7 +1,7 @@
 import React from "react";
-export default function Task({ task, isNew }) {
+export default function Task({ task, isNew, color }) {
   return (
-    <div className='task-card'>
+    <div className='task-card' style={{ boxShadow: `4px 4px 4px #${color}25` }}>
       <div className='main-task-info'>
         <p className='task-title'>{task.title}</p>
         <p>

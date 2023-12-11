@@ -32,5 +32,16 @@ const authService = {
       console.log(error.message);
     }
   },
+
+  getUserRoles: async (token) => {
+    try {
+      const response = await axios.get(
+        `${API_BASE_URL}/users/roles?token=${token}`
+      );
+      return response.data;
+    } catch (error) {
+      console.log(error.message);
+    }
+  },
 };
 export default authService;

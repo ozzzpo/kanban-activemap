@@ -11,24 +11,27 @@ export default function Column({ status, token }) {
         : [];
       setTasks(filteredTasks);
     });
-  }, []);
+  }, [status.id, token]);
   const isNew = status.id === "1";
   return (
     <div className='column'>
-      <div className='column_title' style={{boxShadow: `4px 4px 4px #${status.color}25`}}>
-        <div className='column_title_left' >
+      <div
+        className='column_title'
+        style={{ boxShadow: `4px 4px 4px #${status.color}25` }}
+      >
+        <div className='column_title_left'>
           <div
             className='circle'
             style={{ backgroundColor: `#${status.color}` }}
           ></div>
         </div>
-        <p
-        style={{color: `#${status.color}`}}
-        >{status.name.charAt(0).toUpperCase() + status.name.slice(1)}</p>
+        <p style={{ color: `#${status.color}` }}>
+          {status.name.charAt(0).toUpperCase() + status.name.slice(1)}
+        </p>
       </div>
       <div className='tasks'>
         {tasks.map((task) => (
-          <Task task={task} key={task.id} isNew={isNew} />
+          <Task task={task} key={task.id} isNew={isNew} color={status.color} />
         ))}
       </div>
     </div>
