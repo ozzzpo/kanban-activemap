@@ -31,7 +31,7 @@ export default function Column({ status, token }) {
       </div>
       <div className='tasks'>
         {tasks.map((task) => (
-          <Task task={task} key={task.id} isNew={isNew} color={status.color} />
+          <Task task={task} key={task.id} isNew={isNew} token={token} color={status.color} />
         ))}
       </div>
     </div>
