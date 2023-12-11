@@ -46,11 +46,11 @@
 .links a:hover::after {
   width: 100%;
 }
-.links a:active{
-    color: #fff;
+.links a:active {
+  color: #fff;
 }
-.links a:active::after{
-    background-color: #ffffff;
+.links a:active::after {
+  background-color: #ffffff;
 }
 .profile {
   display: flex;
@@ -166,9 +166,9 @@
 }
 
 .column {
-    flex: 1 0 230px; 
-    width: 230px;
-    min-height: 70vh;
+  flex: 1 0 230px;
+  width: 230px;
+  min-height: 70vh;
   background-color: #e2e2e2;
   border-radius: 4px;
   display: flex;
@@ -245,7 +245,7 @@
 }
 
 .task-card {
-    cursor: pointer;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -258,9 +258,9 @@
   border-radius: 4px;
   transition: 0.5s;
 }
-.task-card:hover{
-    transform: scale(1.1);
-    transition: 0.5s;
+.task-card:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 
 .task-card span {
@@ -289,13 +289,13 @@
   justify-content: center;
   pointer-events: none;
 }
-.active{
+.active {
   display: flex;
   pointer-events: all;
 }
 .modal_content {
   width: 50%;
-  height: 70%;
+  min-height: 70%;
   background-color: white;
   box-shadow: 4px 4px 4px #2e2e2e;
   border-radius: 4px;
@@ -303,29 +303,29 @@
   justify-content: center;
   padding: 20px;
 }
-.modal_inform{
+.modal_inform {
   width: 65%;
   display: flex;
   flex-direction: column;
 }
-.modal_header{
+.modal_header {
   padding: 20px 0;
 }
-.modal_header p{
+.modal_header p {
   font-size: 32px;
   font-family: "PT Sans Caption", sans-serif;
   font-weight: bold;
 }
-.descr_span{
+.descr_span {
   padding: 5px 0;
   font-size: 20px;
   font-family: "Nunito Sans", sans-serif;
   color: black;
 }
-.descr_span span{
+.descr_span span {
   color: #565759;
 }
-.modal_photo{
+.modal_photo {
   width: 400px;
   height: 250px;
   border-radius: 4px;
