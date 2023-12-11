@@ -18,7 +18,7 @@ export default function Task({ task, isNew, token, color }) {
       </div>
       <p className='date'>{task.deadline?.slice(0, 10)}</p>
     </div>
-    <Modal task={task} active={active} isActive={isActive} color={color} token={token}></Modal>
+    {active && <Modal task={task} active={active} isActive={isActive} color={color} token={token}></Modal>}
     </>
   );
 }
