@@ -46,6 +46,12 @@
 .links a:hover::after {
   width: 100%;
 }
+.links a:active{
+    color: #fff;
+}
+.links a:active::after{
+    background-color: #ffffff;
+}
 .profile {
   display: flex;
   justify-content: space-between;
@@ -93,7 +99,7 @@
   height: 70%;
 }
 .sidebar {
-  width: 200px;
+  width: 20%;
   height: 100%;
   background-color: #fff;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -160,13 +166,12 @@
 }
 
 .column {
-  min-width: 230px;
-  max-width: 100%;
-  min-height: 70vh;
+    flex: 1 0 230px; 
+    width: 230px;
+    min-height: 70vh;
   background-color: #e2e2e2;
   border-radius: 4px;
   display: flex;
-  flex: 1 1 auto;
   flex-direction: column;
   align-items: center;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
@@ -227,7 +232,6 @@
 .columns {
   width: 100%;
   display: flex;
-  flex: 1 1 auto;
   flex-wrap: nowrap;
   flex-direction: row;
 }
@@ -241,15 +245,22 @@
 }
 
 .task-card {
+    cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 250px;
+  min-height: 250px;
   padding: 15px 10px;
   background-color: #fff;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: "Nunito Sans", sans-serif;
+  border-radius: 4px;
+  transition: 0.5s;
+}
+.task-card:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
 .task-card span {
@@ -267,18 +278,55 @@
   text-align: right;
 }
 .modal {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: rgba(46, 46, 46, 0.47);
   position: fixed;
-  display: flex;
+  top: 0;
+  left: 0;
+  display: none;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
+}
+.active{
+  display: flex;
+  pointer-events: all;
 }
 .modal_content {
   width: 50%;
   height: 70%;
   background-color: white;
   box-shadow: 4px 4px 4px #2e2e2e;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.modal_inform{
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+.modal_header{
+  padding: 20px 0;
+}
+.modal_header p{
+  font-size: 32px;
+  font-family: "PT Sans Caption", sans-serif;
+  font-weight: bold;
+}
+.descr_span{
+  padding: 5px 0;
+  font-size: 20px;
+  font-family: "Nunito Sans", sans-serif;
+  color: black;
+}
+.descr_span span{
+  color: #565759;
+}
+.modal_photo{
+  width: 400px;
+  height: 250px;
   border-radius: 4px;
 }

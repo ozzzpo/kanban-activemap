@@ -1,7 +1,10 @@
-import React from "react";
-export default function Task({ task, isNew, color }) {
+import React, { useState } from "react";
+import Modal from "./Modal";
+export default function Task({ task, isNew, token, color }) {
+  const [active, isActive] = useState(false)
   return (
-    <div className='task-card' style={{ boxShadow: `4px 4px 4px #${color}25` }}>
+    <>
+    <div onClick={() => isActive(!active)} className='task-card' style={{ boxShadow: `4px 4px 4px #${color}25` }}>
       <div className='main-task-info'>
         <p className='task-title'>{task.title}</p>
         <p>
@@ -15,5 +18,7 @@ export default function Task({ task, isNew, color }) {
       </div>
       <p className='date'>{task.deadline?.slice(0, 10)}</p>
     </div>
+    <Modal task={task} active={active} isActive={isActive} color={color} token={token}></Modal>
+    </>
   );
 }
