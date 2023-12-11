@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuth } from "../../router/AuthWrapper";
 import logo from "../../assets/images/activemap.png";
 import Header from "../../components/Header";
+import Column from "../../components/Column";
 import "./Dashboard.css";
 import authService from "../../api/auth.service";
 import tasksService from "../../api/tasks.service";
@@ -34,7 +35,16 @@ export default function Dashboard() {
           <span>ActiveMap</span>
         </div>
         <Header name={user.fio} pic={userPic} />
-        <div className='main'></div>
+        <div className="columns-scroll">
+          <div className="columns">
+            <Column></Column>
+            <Column></Column>
+            <Column></Column>
+            <Column></Column>
+            <Column></Column>
+            <Column></Column>
+          </div>
+        </div>
       </div>
     </div>
   );
