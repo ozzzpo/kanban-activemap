@@ -5,16 +5,43 @@
   width: 100%;
   height: 70px;
   padding: 0px 40px;
+  border-radius: 4px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: "Nunito Sans", sans-serif;
 }
-
 .links {
-  width: 100px;
-  display: flex;
-  justify-content: space-between;
-}
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    color: #006da1;
+    font-size: 22px;
+  }
 
+.links a{
+    font-family: 'Nunito Sans', sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.links a:visited {
+  color: #006da1;
+}
+.links a::after { 
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: #006da1;
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+}
+.links a:hover { color: #006da1; }
+.links a:hover::after { width: 100%; }
 .profile {
   display: flex;
   justify-content: space-between;
@@ -53,73 +80,107 @@
   align-items: center;
   color: #565759;
 }
-.column{
-    min-width: 300px;
-    min-height: 70vh;
-    max-height: 100%;
-    background-color:#E2E2E2;
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-    padding: 10px 0;
-    margin: 0 10px 0 0;
+
+.main {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  height: 70%;
 }
-.column_title{
-    font-family: "Nunito Sans", sans-serif;     
-    font-size: 24px;
-    background-color: white;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25); 
-    min-width: 80%;
-    display: flex;
-    align-items: center;
-    border-radius: 4px;
-    padding: 15px 0;
-    color: #565759;
-}
-.column_title_left{
-    min-width: 20%;
-    display: flex;
-    justify-content: center;
-}
-.circle{
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: #565759;
+.sidebar {
+  width: 200px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
 }
 
-.columns-scroll{
-    width: 100%;
-    overflow: auto;
+.column {
+  min-width: 230px;
+  max-width: 100%;
+  min-height: 100%;
+  height: 65vh;
+  background-color: #e2e2e2;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  padding: 10px 0;
+  margin: 0 10px 0 0;
+}
+.column_title {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  background-color: white;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  min-width: 80%;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 15px 0;
+  color: #565759;
+}
+.column_title_left {
+  min-width: 20%;
+  display: flex;
+  justify-content: center;
+}
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #565759;
+}
+
+.columns-scroll {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 }
 .columns-scroll::-webkit-scrollbar {
-    width: 12px;
-    background-color: #999999;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
+  width: 12px;
+  background-color: #999999;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
 }
 .columns-scroll::-webkit-scrollbar-thumb {
-    background-color: #565759;
-    border-radius: 4px;
+  background-color: #565759;
+  border-radius: 4px;
 }
 
 .columns-scroll::-webkit-scrollbar:horizontal {
-    height: 12px;
-    background-color: #999999;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
+  height: 12px;
+  background-color: #999999;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
 }
 .columns-scroll::-webkit-scrollbar-thumb:horizontal {
-    background-color: #565759;
-    border-radius: 4px;
-}
-  
-.columns{
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
+  background-color: #565759;
+  border-radius: 4px;
 }
 
+.columns {
+  width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.modal{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(46, 46, 46, 0.47);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal_content{
+    width: 50%;
+    height: 70%;
+    background-color: white;
+    box-shadow: 4px 4px 4px #2E2E2E;
+    border-radius: 4px;
+}
