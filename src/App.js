@@ -6,7 +6,6 @@ import { AuthProvider } from "./router/AuthWrapper";
 import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
-  console.log(service.sendLogPass());
   return (
     <BrowserRouter>
       <AuthProvider>

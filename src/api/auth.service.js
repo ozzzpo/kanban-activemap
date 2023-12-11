@@ -16,5 +16,21 @@ const authService = {
       console.log(error.message);
     }
   },
+
+  getUserPic: async (token, id) => {
+    try {
+      const response = await axios.get(
+        `${API_BASE_URL}/users/${id}/avatar?token=${token}`,
+        {
+          headers: {
+            "Content-Type": "image/jpeg",
+          },
+        }
+      );
+      return response.data;
+    } catch (error) {
+      console.log(error.message);
+    }
+  },
 };
 export default authService;
