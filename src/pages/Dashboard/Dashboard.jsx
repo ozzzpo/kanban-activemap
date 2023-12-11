@@ -2,6 +2,7 @@ import React from "react";
 import { useAuth } from "../../router/AuthWrapper";
 import logo from "../../assets/images/activemap.png";
 import Header from "../../components/Header";
+import Column from "../../components/Column";
 import "./Dashboard.css";
 
 export default function Dashboard() {
@@ -16,6 +17,16 @@ export default function Dashboard() {
           <span>ActiveMap</span>
         </div>
         <Header />
+        <div className="columns-scroll">
+          <div className="columns">
+            <Column></Column>
+            <Column></Column>
+            <Column></Column>
+            <Column></Column>
+            <Column></Column>
+            <Column></Column>
+          </div>
+        </div>
       </div>
     </div>
   );
