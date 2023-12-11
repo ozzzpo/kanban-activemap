@@ -12,5 +12,16 @@ const tasksService = {
       console.log(error.message);
     }
   },
+
+  getStatuses: async (token) => {
+    try {
+      const response = await axios.get(
+        `${API_BASE_URL}/statuses?token=${token}`
+      );
+      return response.data;
+    } catch (error) {
+      console.log(error.message);
+    }
+  },
 };
 export default tasksService;
