@@ -20,12 +20,7 @@ const authService = {
   getUserPic: async (token, id) => {
     try {
       const response = await axios.get(
-        `${API_BASE_URL}/users/${id}/avatar?token=${token}`,
-        {
-          headers: {
-            "Content-Type": "image/jpeg",
-          },
-        }
+        `${API_BASE_URL}/users/${id}/avatar?token=${token}`
       );
       return response.data;
     } catch (error) {
@@ -38,6 +33,15 @@ const authService = {
       const response = await axios.get(
         `${API_BASE_URL}/users/roles?token=${token}`
       );
+      return response.data;
+    } catch (error) {
+      console.log(error.message);
+    }
+  },
+
+  getAllUsers: async (token) => {
+    try {
+      const response = await axios.get(`${API_BASE_URL}/users?token=${token}`);
       return response.data;
     } catch (error) {
       console.log(error.message);
