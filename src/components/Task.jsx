@@ -1,5 +1,4 @@
 import React from "react";
-
 export default function Task({ task, isNew }) {
   return (
     <div className='task-card'>
