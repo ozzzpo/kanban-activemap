@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Task from "./Task";
+import tasksService from "../api/tasks.service";
 
-const dotColors = {};
-
-export default function Column({ status }) {
+export default function Column({ status, token }) {
+  const [tasks, setTasks] = useState([]);
+  useEffect(() => {
+    tasksService.getTasks(token).then((data) => {
+      const filteredTasks = data
+        ? data.news_list.filter((task) => task.status_id === status.id)
+        : [];
+      setTasks(filteredTasks);
+    });
+  }, []);
+  const isNew = status.id === "1";
   return (
     <div className='column'>
       <div className='column_title'>
@@ -15,7 +24,11 @@ export default function Column({ status }) {
         </div>
         <p>{status.name.charAt(0).toUpperCase() + status.name.slice(1)}</p>
       </div>
-      <Task></Task>
+      <div className='tasks'>
+        {tasks.map((task) => (
+          <Task task={task} key={task.id} isNew={isNew} />
+        ))}
+      </div>
     </div>
   );
 }
