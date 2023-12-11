@@ -42,7 +42,7 @@ export default function Sidebar({ setFilters, users, types }) {
         </div>
       </form>
       <button className='drop_button' onClick={dropFilters}>
-        Сбросить фильтры
+        Сбросить
       </button>
     </div>
   );

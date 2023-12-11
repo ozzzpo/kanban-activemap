@@ -104,17 +104,18 @@
   background-color: #fff;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
-  padding: 10px 0;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .sidebar_title {
-  font-size: 18px;
+  font-size: 20px;
   font-family: "PT Sans Caption", sans-serif;
   text-align: center;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .sidebar label {
@@ -124,35 +125,45 @@
 }
 
 .filters {
+  min-height: -moz-fit-content;
   min-height: fit-content;
-  height: fit-content;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .filters select {
+  border: 1px solid black;
   padding: 5px 10px;
   font-size: 14px;
-  border: none;
+  font-family: "Nunito Sans", sans-serif;
   width: 140px;
-  border-radius: 3px;
+  border-radius: 4px;
+  width: 100%;
+  
 }
 
 .select_group {
+  width: 80%;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
+.buttons{
+  width: 80%;
+}
 .filter_button {
+  width: 100%;
   font-size: 16px;
-  padding: 5px 10px;
+  padding: 10px 10px;
   margin-top: 20px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .drop_button {
-  font-size: 12px;
-  padding: 5px 10px;
+  cursor: pointer;
+  width: 80%;
+  font-size: 16px;
+  padding: 10px 10px;
   border: none;
   color: #fff;
   font-family: "PT Sans Caption", sans-serif;
@@ -160,11 +171,14 @@
   background-color: red;
   margin-top: 30px;
   border-radius: 5px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .drop_button:hover {
   background-color: rgb(219, 21, 21);
 }
-
+.drop_button:active{
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25) inset;
+}
 .column {
   flex: 1 0 230px;
   width: 230px;
@@ -295,7 +309,7 @@
 }
 .modal_content {
   width: 50%;
-  min-height: 70%;
+  height: 80%;
   background-color: white;
   box-shadow: 4px 4px 4px #2e2e2e;
   border-radius: 4px;
@@ -304,9 +318,10 @@
   padding: 20px;
 }
 .modal_inform {
-  width: 65%;
+  width: 90%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .modal_header {
   padding: 20px 0;
@@ -315,6 +330,15 @@
   font-size: 32px;
   font-family: "PT Sans Caption", sans-serif;
   font-weight: bold;
+}
+.modal_description{
+  overflow-y: auto;
+}
+.modal_description::-webkit-scrollbar {
+  display: none;
+}
+.modal_description::-webkit-scrollbar-thumb {
+  display: none;
 }
 .descr_span {
   padding: 5px 0;
@@ -325,8 +349,37 @@
 .descr_span span {
   color: #565759;
 }
-.modal_photo {
-  width: 400px;
-  height: 250px;
+.modal_photo {  
+  max-width: 100%;
+  max-height: 100%;
   border-radius: 4px;
+}
+.modal_photo_okr{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 0 50px 0;
+  gap: 30px
+}
+.modal_pp{
+  width: 246px;
+  height: 254px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #D9D9D9;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.modal_photo_title span{
+  color: black !important;
+  font-size: 16px;
+}
+.zatemn{
+  height: 22px;
+  width: 100%;
+  box-shadow: 0px -12px 15px 20px white;
+  position: absolute;
+  background-color: white;
+  bottom: 0;
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 export default function Modal({task, active, isActive, color, token}){
+    console.log(task)
     return(
         <div onClick={() => isActive(!active)} className={active ? 'modal active' : 'modal'}>
             <div onClick={e => e.stopPropagation()} style={{boxShadow: `4px 4px 4px #${color}50`}} className='modal_content'>
@@ -31,6 +32,11 @@ export default function Modal({task, active, isActive, color, token}){
                             <span>Организация-исполнитель: </span>
                             {task.departament_title}
                         </div>}
+                        {task.user_fio && <div className='descr_span'>
+                            <span>Создатель: </span>
+                            {task.user_fio}
+                        </div>
+                        }
                         {task.assigned_user_fio && <div className='descr_span'>
                             <span>Исполнитель: </span>
                             {task.assigned_user_fio}
@@ -46,10 +52,24 @@ export default function Modal({task, active, isActive, color, token}){
                         {task.attachments.length > 0 && <div className='descr_span'>
                             <span>Фотография: </span>
                             <div className='modal_photo_okr'>
-                                <img className='modal_photo' src={`https://team1.activemap.ru/rest/tasks/${task.id}/photos/1?token=${token}`} />    
+                                {
+                                    task.attachments.map((el) => {
+                                        return(
+                                            <div className='modal_okr'>
+                                            <div className='modal_pp'>
+                                                <img className='modal_photo' src={`https://team1.activemap.ru/rest/tasks/${task.id}/photos/${el.num}?token=${token}`} />
+                                            </div>
+                                            <div className='modal_photo_title'>
+                                                <span>{el.sticker?.title}</span>
+                                            </div>
+                                            </div>
+                                        )
+                                    })
+                                } 
                             </div>
                         </div>}
                     </div>
+                    <div className='zatemn'></div>
                 </div>
             </div>
         </div>
