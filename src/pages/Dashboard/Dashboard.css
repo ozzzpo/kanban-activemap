@@ -103,6 +103,7 @@
   background-color: #e2e2e2;
   border-radius: 4px;
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   align-items: center;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
@@ -114,7 +115,7 @@
   font-size: 20px;
   background-color: white;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  min-width: 80%;
+  min-width: 90%;
   display: flex;
   align-items: center;
   border-radius: 4px;
@@ -162,12 +163,11 @@
 
 .columns {
   width: 100%;
-  max-height: 100%;
   display: flex;
+  flex: 1 1 auto;
   flex-wrap: nowrap;
   flex-direction: row;
 }
-
 .modal{
     width: 100%;
     height: 100vh;
@@ -183,4 +183,37 @@
     background-color: white;
     box-shadow: 4px 4px 4px #2E2E2E;
     border-radius: 4px;
+}
+.tasks {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 25px;
+}
+
+.task-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 250px;
+  padding: 15px 10px;
+  background-color: #fff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.task-card span {
+  color: #565759;
+}
+
+.task-title {
+  font-size: 18px;
+  font-family: "Unbounded";
+  text-align: center;
+  margin-bottom: 10px;
+}
+.date {
+  text-align: right;
 }

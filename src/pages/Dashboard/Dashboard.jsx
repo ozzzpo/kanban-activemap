@@ -15,7 +15,6 @@ export default function Dashboard() {
   const [statuses, setStatuses] = useState([]);
   const auth = useAuth();
   const user = auth.user;
-  console.log(user);
   const token = user.token;
   // const tasks = tasksService.getTasks(token).then((data) => {
   //   console.log("Response data:", data);
@@ -48,14 +47,8 @@ export default function Dashboard() {
           <div className='columns-scroll'>
             <div className='columns'>
               {statuses.map((status) => (
-                <Column status={status} key={status.id} />
+                <Column status={status} key={status.id} token={token} />
               ))}
-              {/* <Column></Column>
-              <Column></Column>
-              <Column></Column>
-              <Column></Column>
-              <Column></Column>
-              <Column></Column> */}
             </div>
           </div>
         </main>
