@@ -140,7 +140,6 @@
   width: 140px;
   border-radius: 4px;
   width: 100%;
-  
 }
 
 .select_group {
@@ -149,7 +148,7 @@
   flex-direction: column;
   gap: 10px;
 }
-.buttons{
+.buttons {
   width: 80%;
 }
 .filter_button {
@@ -176,7 +175,7 @@
 .drop_button:hover {
   background-color: rgb(219, 21, 21);
 }
-.drop_button:active{
+.drop_button:active {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25) inset;
 }
 .column {
@@ -290,6 +289,7 @@
 }
 .date {
   text-align: right;
+  font-size: 14px;
 }
 .modal {
   width: 100vw;
@@ -327,6 +327,11 @@
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.file_input {
+  padding: 5px 10px;
+  font-family: "PT Sans Caption", sans-serif;
 }
 .modal_header p {
   font-size: 32px;
@@ -354,33 +359,33 @@
 .descr_span span {
   color: #565759;
 }
-.modal_photo {  
+.modal_photo {
   max-width: 100%;
   max-height: 100%;
   border-radius: 4px;
 }
-.modal_photo_okr{
+.modal_photo_okr {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 0 50px 0;
-  gap: 30px
+  gap: 30px;
 }
-.modal_pp{
+.modal_pp {
   width: 246px;
   height: 254px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   border-radius: 4px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
-.modal_photo_title span{
+.modal_photo_title span {
   color: black !important;
   font-size: 16px;
 }
-.zatemn{
+.zatemn {
   height: 22px;
   width: 100%;
   box-shadow: 0px -12px 15px 20px white;

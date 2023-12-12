@@ -9,7 +9,6 @@ import defaultPic from "../../assets/images/defaultpic.jpg";
 import Sidebar from "../../components/Sidebar";
 
 import authService from "../../api/auth.service";
-import Modal from "../../components/Modal"
 
 export default function Dashboard() {
   const [userPic, setUserPic] = useState(defaultPic);

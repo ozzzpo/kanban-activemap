@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-
+import React, { useState } from "react";
 export default function Modal({task, active, isActive, color, token}){
     console.log(task)
     return(
@@ -8,6 +7,7 @@ export default function Modal({task, active, isActive, color, token}){
                 <div className='modal_inform'>
                     <div className='modal_header'>
                         <p>{task.title}</p>
+                        <input className='file_input' type='file' onChange={onLoad} />
                         <p className='modal_close' onClick={() => isActive(!active)}>X</p>
                     </div>
                     <div className='modal_description'>
@@ -37,42 +37,19 @@ export default function Modal({task, active, isActive, color, token}){
                             <span>Создатель: </span>
                             {task.user_fio}
                         </div>
-                        }
-                        {task.assigned_user_fio && <div className='descr_span'>
-                            <span>Исполнитель: </span>
-                            {task.assigned_user_fio}
-                        </div>}
-                        {task.status_name && <div className='descr_span'>
-                            <span>Стадия: </span>
-                            {task.status_name}
-                        </div>}
-                        {task.text && task.text !== '-' && <div className='descr_span'>
-                            <span>Описание: </span>
-                            {task.text}
-                        </div>}
-                        {task.attachments.length > 0 && <div className='descr_span'>
-                            <span>Фотография: </span>
-                            <div className='modal_photo_okr'>
-                                {
-                                    task.attachments.map((el) => {
-                                        return(
-                                            <div className='modal_okr'>
-                                            <div className='modal_pp'>
-                                                <img className='modal_photo' src={`https://team1.activemap.ru/rest/tasks/${task.id}/photos/${el.num}?token=${token}`} />
-                                            </div>
-                                            <div className='modal_photo_title'>
-                                                <span>{el.sticker?.title}</span>
-                                            </div>
-                                            </div>
-                                        )
-                                    })
-                                } 
-                            </div>
-                        </div>}
-                    </div>
-                    <div className='zatemn'></div>
+                        <div className='modal_photo_title'>
+                          <span>{el.sticker?.title}</span>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
-            </div>
+              </div>
+            )}
+          </div>
+          <div className='zatemn'></div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
