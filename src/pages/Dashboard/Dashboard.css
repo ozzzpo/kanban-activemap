@@ -326,8 +326,8 @@
 .modal_header {
   padding: 20px 0;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 .file_input {
   padding: 5px 10px;
@@ -338,7 +338,10 @@
   font-family: "PT Sans Caption", sans-serif;
   font-weight: bold;
 }
-.modal_description {
+.modal_close{
+  cursor: pointer;
+}
+.modal_description{
   overflow-y: auto;
 }
 .modal_description::-webkit-scrollbar {
@@ -389,4 +392,235 @@
   position: absolute;
   background-color: white;
   bottom: 0;
+}
+
+@media screen and (max-width: 1380px) and (min-width: 900px) {
+  .content{
+    padding: 10px 15px;
+  }
+  .main{
+    gap: 10px;
+  }
+  .sidebar{
+    width: 35%;
+  }
+  .modal_content{
+    width: 70%;
+  }
+}
+@media screen and (max-width: 899px) and (min-width: 700px) {
+  .wrapper{
+    padding: 10px;
+  }
+  .content{
+    padding: 10px 15px;
+  }
+  .main{
+    gap: 10px;
+  }
+  .sidebar{
+    width: 45%;
+  }
+  .links a{
+    font-size: 18px;
+  }
+  .name:nth-child(1){
+    font-size: 14px;
+  }
+  .name:nth-last-child(1){
+    font-size: 10px;
+  }
+  .person{
+    width: 270px;
+  }
+  .profile{
+    width: 360px;
+  }
+  .modal_content{
+    width: 70%;
+  }
+}
+@media screen and (max-width: 699px) and (min-width: 500px) {
+  .wrapper{
+    padding: 10px 0;
+  }
+  .content{
+    padding: 10px 15px;
+  }
+  .main{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar{
+    width: 100%;
+    height: 20%;
+    padding: 0 2%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .sidebar_title{
+    display: none;
+  }
+  .filters{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  .select label{
+    font-size: 14px;
+    margin: 0;
+  }
+  .select_group{
+    flex-direction: row;
+    align-items: center;
+    width: 55%;
+  }
+  .buttons{
+    width: 30%;
+    display: flex;
+    align-items: center;
+  }
+  .filter_button{
+    margin: 0;
+  }
+  .drop_button{
+    margin: 0;
+    width: 20%;
+  }
+  .links a{
+    font-size: 16px;
+  }
+  .links{
+    width: 100px;
+  }
+  .name:nth-child(1){
+    font-size: 14px;
+  }
+  .name:nth-last-child(1){
+    font-size: 10px;
+  }
+  .person{
+    width: 270px;
+  }
+  .profile{
+    width: 350px;
+  }
+  .header{
+    padding: 0 10px;
+  }
+  .modal_content{
+    width: 80%;
+  }
+}
+@media screen and (max-width: 499px) and (min-width: 300px) {
+  .wrapper{
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: white;
+  }
+  .content{
+    padding: 0;
+    gap: 0;
+    
+  }
+  .logo{
+    display: none
+  }
+  .header{
+    box-sizing: content-box;
+    height: 100px;
+    padding:20px;
+    background-color: white;
+    border-radius: 0 0 4px 4px;
+    flex-direction: column-reverse;
+    align-items: start;
+    box-shadow: none;
+  }
+  .profile{
+    width: 100%;
+    justify-content: space-around;
+  }
+  .name{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .person{
+    width: 60%;
+    flex-direction: row-reverse;
+  }
+  
+  .links a{
+    font-size: 20px;
+  }
+  .links{
+    width: 100%;
+    height: 20px;
+    justify-content: space-around;
+  }
+
+  .main{
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+  }
+  .column{
+    flex: 1 0 250px;
+    margin: 0 50px;
+    min-height: 50vh;
+  }
+  .sidebar{
+    width: 100%;
+    height: 30%;
+    padding: 0 2%;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .sidebar_title{
+    display: none;
+  }
+  .filters{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .select label{
+    font-size: 14px;
+    margin: 0;
+  }
+  .select_group{
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+  }
+  .buttons{
+    width: 35%;
+    display: flex;
+    align-items: center;
+  }
+  .filter_button{
+    margin: 0;
+    font-size: 14px;
+  }
+  .drop_button{
+    margin: 0;
+    width: 30%;
+    font-size: 14px;
+  }
+  
+  .name:nth-child(1){
+    font-size: 13px;
+    text-align: left;
+  }
+  .modal_content{
+    width: 100%;
+  }
+  
 }

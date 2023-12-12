@@ -43,9 +43,11 @@ export default function Column({ status, token, filters }) {
         </p>
       </div>
       <div className='tasks'>
-        {tasks.map((task) => (
-          <Task task={task} key={task.id} isNew={isNew} token={token} color={status.color} />
-        ))}
+        {tasks.length > 0 &&
+      (<>{tasks.map((task) => (
+        <Task task={task} key={task.id} isNew={isNew} token={token} color={status.color} />
+      ))}</>)  
+      }
       </div>
     </div>
   );
